@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      {% if title %}
+         <title>Deepankar's Blog - {{ title }}</title>
+      {% else %}
+         <title>Deepankar's Blog</title>
+      {% endif %}
+   </head>
+   <body>
+      {% extends "template.html" %}
+      {% block content %}
+      <h2> Let's build an awesome website today! </h2>
+      <h3><p> We will be using Flask Framework to build a website with login functionality.</p>
+      <p> This is so exciting!</p> </h3>
+      {% endblock %}
+   </body>
+</html>

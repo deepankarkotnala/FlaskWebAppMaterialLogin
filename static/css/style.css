@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+}
+
+.form-control {
+  --default-color: currentColor;
+  --invalid-color: #e74c3c;
+  --valid-color:  #f7dc6f  ;
+  --border-bottom-color: currentColor;
+  position: relative;
+  border-bottom: 1px solid var(--border-bottom-color);
+}
+.form-control::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--valid-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s;
+}
+.form-control:focus-within::after {
+  transform: scaleX(1);
+}
+.form-control input {
+  padding: 8px 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: currentColor;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.form-control input:invalid ~ label {
+  color: var(--invalid-color);
+}
+.form-control input:valid ~ label {
+  color: var(--valid-color);
+}
+.form-control input:placeholder-shown ~ label {
+  color: var(--default-color);
+}
+.form-control input:focus ~ label, .form-control input:not(:placeholder-shown) ~ label {
+  transform: translateY(-120%) scale(0.75);
+}
+.form-control label {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  transition: 0.3s;
+  transform-origin: left;
+}
+
+.btn1 {
+  position: relative;
+  width: 100%;
+  padding: 7px 2em;
+  font-size: 16px;
+  color: currentColor;
+  background: transparent;
+  border: 2px solid #f7dc6f;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 18px;
+}
+.btn1::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+.btn1:hover {
+  color: #000;
+  background: #f7dc6f;
+  border-radius: 4px;
+}
+.btn1:hover::before {
+  transform: translateX(100%);
+}
+
+
+.btn2 {
+  position: relative;
+  padding: 8px 4em;
+  font-size: 16px;
+  color: currentColor;
+  background: transparent;
+  border: 2px solid #f7dc6f;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+  border-radius: 18px;
+  text-decoration: none;
+}
+.btn2::before {
+  width: 100%;
+  height: 100%;
+  
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+.btn2:hover {
+  color: #000;
+  background: #f7dc6f;
+  border-radius: 4px;
+}
+.btn2:hover::before {
+  transform: translateX(100%);
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 60px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+}
+.login-form h1 {
+  margin: 0 0 24px 0;
+  font-size: 36px;
+}
+.login-form .form-control {
+  margin: 18px 0;
+}
+.login-form .btn1 {
+  width: 100%;
+  margin: 18px 0 9px 0;
+}

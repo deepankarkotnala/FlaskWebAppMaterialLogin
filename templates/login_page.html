@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  {% if title %}
+     <title>Deepankar's Blog - {{ title }}</title>
+  {% else %}
+     <title>Deepankar's Blog</title>
+  {% endif %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<form class="login-form" action="/login" method="POST"> 
+<div>
+  <h1>Login</h1>
+  <div class="form-control">
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder=" "
+      autocomplete="off"
+      required
+    /> 
+    <label for="username">Username</label>
+  </div>
+  <div class="form-control">
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder=" "
+      autocomplete="off"
+      required
+    />
+    <label for="password">Password</label>
+  </div>
+  <button type="submit" class="btn1">Sign in</button>
+</form>
+{% block content %}
+{% endblock %}
+
+ <p align="center">Don't have an account?</p>
+ <div align="center"> <a class="btn2" href="/signup">Sign up</a></div>
+
+
+<!-- partial -->
+
+</body>
+</html>
